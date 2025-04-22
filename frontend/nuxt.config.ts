@@ -22,5 +22,8 @@ export default defineNuxtConfig({
         transformAssetUrls,
       },
     },
+  },
+  typescript: {
+    typeCheck: true
   }
 })
