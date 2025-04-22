@@ -6,16 +6,13 @@ export default defineNuxtConfig({
   build: {
     transpile: ['vuetify'],
   },
-  modules: [
-    '@nuxtjs/tailwindcss',
+  modules: ['@nuxtjs/tailwindcss', '@nuxt/eslint',
     (_options, nuxt) => {
       nuxt.hooks.hook('vite:extendConfig', (config) => {
         // @ts-expect-error
         config.plugins.push(vuetify({ autoImport: true }))
       })
-    },
-    //...
-  ],
+    }],
   vite: {
     vue: {
       template: {
@@ -24,6 +21,11 @@ export default defineNuxtConfig({
     },
   },
   typescript: {
-    typeCheck: true
-  }
+    typeCheck: true,
+  },
+  eslint: {
+    config: {
+      stylistic: true,
+    },
+  },
 })
