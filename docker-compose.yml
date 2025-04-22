@@ -1,0 +1,42 @@
+services:
+
+  backend:
+    build:
+      context: ./backend
+    volumes:
+      - ./backend:/app
+      - bash-data:/root/.local/bin
+      - python-lib-data:/usr/local/lib/
+    ports:
+      - "8000:8000"
+    depends_on:
+      - mariadb
+    tty: true
+    stdin_open: true
+
+  frontend:
+    image: node:22.14.0
+    working_dir: /app
+    volumes:
+      - ./frontend:/app
+    ports:
+      - "3000:3000"
+    tty: true
+    stdin_open: true
+    
+  mariadb:
+    image: mariadb:11.4
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: item-trend
+      MYSQL_USER: item-trend
+      MYSQL_PASSWORD: item-trend
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+      
+volumes:
+  mysql-data:
+  bash-data:
+  python-lib-data:

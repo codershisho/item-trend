@@ -1,0 +1,31 @@
+{
+  "name": "FastAPI + MariaDB",
+  "dockerComposeFile": [
+    "../docker-compose.yml"
+  ],
+  "service": "backend",
+  "workspaceFolder": "/app",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "charliermarsh.ruff",
+        "njpwerner.autodocstring",
+        "streetsidesoftware.code-spell-checker",
+        "usernamehw.errorlens",
+        "oderwat.indent-rainbow"
+      ],
+      "settings": {
+        "python.formatting.provider": "none",
+        "python.linting.enabled": true,
+        "python.linting.flake8Enabled": false,
+        "python.linting.mypyEnabled": false,
+        "python.linting.ruffEnabled": true,
+        "ruff.path": "/usr/local/bin/ruff",
+        "ruff.args": ["--config", "/workspace/backend/.ruff.toml"],
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": null
+      }
+    }
+  }
+}

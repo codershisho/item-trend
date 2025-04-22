@@ -1,0 +1,24 @@
+{
+  "name": "Nuxt3",
+  "dockerComposeFile": [
+    "../../docker-compose.yml"
+  ],
+  "service": "frontend",
+  "workspaceFolder": "/app",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "Vue.volar",
+        "dbaeumer.vscode-eslint",
+        "hollowtree.vue-snippets",
+        "dariofuzinato.vue-peek",
+        "sdras.vue-vscode-snippets",
+        "stylelint.vscode-stylelint",
+        "bradlc.vscode-tailwindcss",
+        "formulahendry.auto-rename-tag",
+        "formulahendry.auto-close-tag",
+        "oderwat.indent-rainbow"
+      ]
+    }
+  }
+}
